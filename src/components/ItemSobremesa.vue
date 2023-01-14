@@ -23,7 +23,18 @@ export default {
         return this.$store.getters.lojaSobremesas
       }
     },
-    
+    methods:{
+        aplicaDesconto(){
+            // this.$store.state.produtos.sobremesas.forEach(
+            //     item => {
+            //     item.preco = (item.preco * .9).toFixed(2)
+            // })
+            this.$store.commit('aplicaDesconto')
+        }
+    },
+    mounted(){
+        this.aplicaDesconto()
+    }
 }
 </script>
 
