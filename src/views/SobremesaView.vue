@@ -5,7 +5,7 @@
       <div></div>
     </div>
   </div> -->
-  <ItemSobremesa :itemProdutos="produtos"/>
+  <ItemSobremesa/>
 </template>
 
 <script>

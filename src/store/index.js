@@ -19,6 +19,17 @@ export default createStore({
             }
   },
   getters: {
+    lojaSobremesas:state => {
+                  let lojaSobremesas = state.produtos.sobremesas.map(
+                    (item) => { 
+                    return {
+                nome: item.nome,
+                preco: item.preco,
+            }
+        }
+      )
+      return lojaSobremesas
+    }
   },
   mutations: {
   },
