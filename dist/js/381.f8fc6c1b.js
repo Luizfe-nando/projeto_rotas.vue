@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkprojeto_rotas_vue"]=self["webpackChunkprojeto_rotas_vue"]||[]).push([[381],{7381:(e,a,r)=>{r.r(a),r.d(a,{default:()=>p});var s=r(3396),t={class:"about"},u=(0,s._)("h1",null,"This is an about page",-1),o=[u];function n(e,a){return(0,s.wg)(),(0,s.iD)("div",t,o)}var c=r(89);const i={},l=(0,c.Z)(i,[["render",n]]),p=l}}]);
+//# sourceMappingURL=381.f8fc6c1b.js.map
