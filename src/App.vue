@@ -2,7 +2,8 @@
   <nav>
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link> |
-    <router-link :to="rotaSobremesas">Sobremesa</router-link>
+    <router-link :to="rotaSobremesas">Sobremesa</router-link> !
+    <router-link to="/pratos-quentes">Pratos Quentes</router-link>
 
   </nav>
   <router-view/>
@@ -12,7 +13,8 @@
 export default {
   data(){
     return{
-      rotaSobremesas:{name:'sobremesa'}
+      rotaSobremesas:{name:'sobremesa'},
+      
     }
   }
 }

@@ -16,6 +16,11 @@ const routes = [
     path: '/sobremesa',
     name: 'sobremesa',
     component: () => import('../views/SobremesaView.vue')
+  },
+  {
+    path: '/pratos-quentes',
+    name: 'pratos-quentes',
+    component: () => import('../views/PratosQuentesView.vue')
   }
 ]
 

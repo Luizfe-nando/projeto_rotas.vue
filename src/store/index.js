@@ -4,7 +4,7 @@ export default createStore({
   strict:true,
   state: {
     produtos: {
-                PratosQuentes: [
+                pratosQuentes: [
                     {nome: 'Lazanha', preco:180},
                     {nome: 'Salmão Grelhado', preco:230},
                     {nome: 'Espeto de Vegetais', preco:90},
@@ -20,8 +20,8 @@ export default createStore({
             }
   },
   getters: {
-    lojaSobremesas:state => {
-                  let lojaSobremesas = state.produtos.sobremesas.map(
+    loja:(state)=> tipo =>{
+                  let loja = state.produtos[tipo].map(
                     (item) => { 
                     return {
                 nome: item.nome,
@@ -29,20 +29,27 @@ export default createStore({
             }
         }
       )
-      return lojaSobremesas
+      return loja
     }
   },
   mutations: {
-  aplicaDesconto:state=>{
+  aplicaDesconto:(state, payload)=>{
    
-            state.produtos.sobremesas.forEach(
-                item => {
+            state.produtos[payload].forEach(
+                (item )=> {
                 item.preco = (item.preco * .9).toFixed(2)
             })
         }
     
   },
   actions: {
+    aplicaDesconto:(context, payload)=>{
+   
+            context.commit('aplicaDesconto', payload)
+            
+        }
+    
+  
   },
   modules: {
   }

@@ -5,22 +5,22 @@
       <div></div>
     </div>
   </div> -->
-  <ItemSobremesa/>
+  <ItemProduto :tipo="categoria"/>
 </template>
 
 <script>
-import ItemSobremesa from '@/components/ItemSobremesa'
+import ItemProduto from '@/components/ItemProduto.vue'
 
 export default {
   data (){
     return{
-      
+      categoria:'sobremesas'
     }
   },
    
   name:'SobremesaView',
   components:{
-    ItemSobremesa
+    ItemProduto
   }
 }
 </script>

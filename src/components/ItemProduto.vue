@@ -4,7 +4,7 @@
         <span>Estamos abertos 24hs</span>
         
         <div class="box box_produto">
-           <div v-for="sobremesa in lojaSobremesas" :key="sobremesa">{{ sobremesa.nome }} - R$ {{ sobremesa.preco }},00</div>
+           <div v-for="item in loja" :key="item">{{ item.nome }} - R$ {{ item.preco }}</div>
         </div>
         
     </div>
@@ -14,14 +14,22 @@
 
 
 export default {
-/*props:{
-        itemProdutos:Object
-    },*/
+props:{
+        tipo:String
+    },
+    data(){
+        return {
+            //tipo:'sobremesas',
+        }
+    },
     
-    computed:{        
-      lojaSobremesas(){
-        return this.$store.getters.lojaSobremesas
-      }
+    computed:{
+        produtos(){
+            return this.$store.state.produtos
+        },      
+        loja(){
+            return this.$store.getters.loja(this.tipo)
+        }
     },
     methods:{
         aplicaDesconto(){
@@ -29,7 +37,7 @@ export default {
             //     item => {
             //     item.preco = (item.preco * .9).toFixed(2)
             // })
-            this.$store.commit('aplicaDesconto')
+            this.$store.dispatch('aplicaDesconto',this.tipo)
         }
     },
     mounted(){
